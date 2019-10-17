@@ -66,25 +66,16 @@ subroutine MG_Vcycle(Nx,dx,RHS,U,Level_num,tol,exact_solver,I_cycle)
 
 ---
 ## Multigrid V cycle Result
-The following tables are the result of **Multigrid V cycle** with 7, 8, and 9 levels <br>
+The following tables are the result of **Multigrid V cycle** with 5 levels <br>
 
 |   Solver  |  Np   |  Cycle  |   CPU Time  |  
 | :---:     | :---: | :---:   |   :---:     |  
-| MG7       | 4096  |   7     |     0.0085  | 
-| MG8       | 4096  |   7     |     0.0021  | 
-| MG9       | 4096  |   7     |     0.0011  | 
+| MG5       | 256   |   8     |     0.0004  | 
+| MG5       | 512   |   8     |     0.0026  | 
+| MG5       | 1024  |   8     |     0.0173  | 
+| MG5       | 2048  |   8     |     0.1277  | 
+| MG5       | 4096  |   8     |     0.9188  | 
 
-|   Solver  |  Np   |  Cycle  |   CPU Time  |  
-| :---:     | :---: | :---:   |   :---:     |
-| MG7       | 8192  |   7     |     0.0673  | 
-| MG8       | 8192  |   7     |     0.0088  | 
-| MG9       | 8192  |   7     |     0.0030  | 
-
-|   Solver  |  Np   |  Cycle  |   CPU Time  |  
-| :---:     | :---: | :---:   |   :---:     |
-| MG7       | 16384 |   7     |     0.5301  | 
-| MG8       | 16384 |   7     |     0.0684  | 
-| MG9       | 16384 |   7     |     0.0110  | 
 
 ## Compile and Run 
 Use [`PGI Compiler`](https://www.pgroup.com/products/community.htm)
