@@ -8,6 +8,7 @@ program Poisson_1D
   use omp_lib
   use Multigrid_1D_Neumann_BC
   use Multigrid_1D_Neumann_BC_OMP
+  use GS_Solver
   implicit none
   integer::i,k,nx,exact_solver,Level_num,I_cycle
   character(len=7) :: mode
@@ -45,7 +46,7 @@ program Poisson_1D
   write(*,*)"-------------------------------------------------------"
 
 
-  do k=8,12
+  do k=10,10
 
     ! Multigrid Level
     do Level_num=5,5
@@ -128,6 +129,30 @@ program Poisson_1D
 
     start=omp_get_wtime()
     call P_MG_Vcycle(Nx,dx,F,U,Level_num,tol,exact_solver,I_cycle)
+    finish=omp_get_wtime()
+
+    !----------------------!
+    ! Error analysis:
+    !----------------------!
+    do i=0,nx
+    e(i) = dabs(u(i)-ue(i))
+    end do
+
+    call L2norm(nx,e,rms)
+
+    write(*,'(A7,i8,i8,f18.12,f15.10)') mode,nx,I_cycle,finish-start,rms
+    write(66,'(A7,i8,i8,f18.12,f15.10)') mode,nx,I_cycle,finish-start,rms
+
+    !---------------------------------------------------------------------------!
+    mode = 'GS'//Level//'-V'//version
+
+    ! Numerical solution:
+    do i=0,nx
+    u(i)=0.0d0
+    end do
+
+    start=omp_get_wtime()
+    call GS_Solver(Nx,dx,F,U,tol,I_cycle)
     finish=omp_get_wtime()
 
     !----------------------!
