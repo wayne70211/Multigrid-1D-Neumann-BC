@@ -9,7 +9,7 @@ F90FLAGS =$(F90OPTFLAGS)
 .f.o:; $(F90) -c -loglist $(F90FLAGS)  $(F90OPTFLAG) $<
 #
 OBJS = \
-Multigrid_1D_Neumann_BC.o Multigrid_1D_Neumann_BC_OMP.o Main.o \
+Multigrid_1D_Neumann_BC.o Multigrid_1D_Neumann_BC_OMP.o GS_Solver.o Main.o \
 
 TARGET = Run
 
