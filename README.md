@@ -66,6 +66,10 @@ subroutine MG_Vcycle(Nx,dx,RHS,U,Level_num,tol,exact_solver,I_cycle)
 
 ---
 ## Multigrid V cycle Result
+The following graph is the iteration result with **Gauss-Seidel scheme** and **Multigrid scheme** when grids equals 1024.<br>
+<p align="center">
+<img src="https://github.com/wayne70211/Multigrid-1D-Neumann-BC/blob/master/Residual.png" title="Residual" />
+</p>
 The following tables are the result of **Multigrid V cycle** with 5 levels <br>
 
 |   Solver  |  Np   |  Cycle  |   CPU Time  |  
