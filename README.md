@@ -3,7 +3,7 @@
 ### 1D Poisson Equation Problem
 <br>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\large&space;\nabla^2&space;u&space;=&space;f(x)&space;=&space;\frac{\sin&space;\pi&space;x&space;&plus;&space;\sin&space;16\pi&space;x}{2}" title="\large \nabla^2 u = f(x) = \frac{\sin \pi x + \sin 16\pi x}{2}" />
+<img src="https://latex.codecogs.com/svg.latex?\large&space;\nabla^2&space;u&space;=&space;f(x)&space;=&space;1-2x" title="\large \nabla^2 u = f(x) = 1-2x" />
 </p>
 <p align="center">
 <img src="https://latex.codecogs.com/svg.latex?\large&space;x\in&space;[0,1]" title="\large x\in [0,1]" /> 
@@ -12,12 +12,23 @@
 with *Neumann Boundary Condition*  <br>
 <br>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\large&space;u(0)=0\;&space;\;&space;u(1)=1" title="\large u(0)=0\; \; u(1)=1" /><br>
+<img src="https://latex.codecogs.com/svg.latex?\large&space;u'(0)=0\;&space;\;&space;u'(1)=0" title="\large u'(0)=0\; \; u'(1)=0" /><br>
 </p>
 
-The exact solution is <br>
+The general solution is <br>
 <p align="center">
-<img src="https://latex.codecogs.com/svg.latex?\large&space;u(x)=-\frac{\sin&space;\pi&space;x}{2\pi^2}&space;-&space;\frac{\sin&space;16\pi&space;x}{512\pi^2}" title="\large u(x)=-\frac{\sin \pi x}{2\pi^2} - \frac{\sin 16\pi x}{512\pi^2}" /> <br>
+<img src="https://latex.codecogs.com/svg.latex?\large&space;u(x)=\frac{x^2}{2}-\frac{x^3}{3}+c" title="\large u(x)=\frac{x^2}{2}-\frac{x^3}{3}+c" /><br>
+</p>
+
+Assume *Zero-mean Condition* <br>
+
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\large&space;\int_{0}^{1}u(x)dx=0" title="\large \int_{0}^{1}u(x)dx=0" /><br>
+</p>
+
+The zero-mean solution is <br>
+<p align="center">
+<img src="https://latex.codecogs.com/svg.latex?\large&space;u(x)=\frac{x^2}{2}-\frac{x^3}{3}-\frac{1}{12}" title="\large u(x)=\frac{x^2}{2}-\frac{x^3}{3}-\frac{1}{12}" /><br>
 </p>
 
 ---
